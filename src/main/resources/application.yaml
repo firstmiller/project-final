@@ -83,9 +83,9 @@ spring:
 logging:
   level:
     root: WARN
-    com.javarush.jira: DEBUG
-    com.javarush.jira.common.config.MvcConfig: WARN
-    org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: DEBUG
+    com.javarush.jira: INFO
+    com.javarush.jira.common.config.MvcConfig: INFO
+    org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: INFO
 
 server:
   forward-headers-strategy: framework
