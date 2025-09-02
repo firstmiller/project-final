@@ -8,6 +8,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
+//@Sql(scripts = {"classpath:test-changelog.sql"},
 @Sql(scripts = {"classpath:test-changelog.sql", "classpath:data.sql"},
         config = @SqlConfig(encoding = "UTF-8"))
 @AutoConfigureMockMvc
