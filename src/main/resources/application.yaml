@@ -19,12 +19,15 @@ spring:
         format_sql: true
         default_batch_fetch_size: 20
         jdbc.batch_size: 20
+
   datasource:
     url: ${db.url}
     username: ${db.username}
     password: ${db.password}
   liquibase:
     changeLog: "classpath:db/changelog.sql"
+    enabled: true
+    default-schema: public
   jackson:
     visibility:
       field: any
@@ -65,6 +68,9 @@ spring:
   sql:
     init:
       mode: always
+      schema-locations: classpath:db/changelog.sql
+      data-locations: classpath:data4dev/data.sql
+      encoding: UTF-8
   mail:
     properties:
       mail:
