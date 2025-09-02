@@ -27,7 +27,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=JiraRush
       - SPRING_PROFILES_ACTIVE=prod
       - SERVER_FORWARDHEADERSSTRATEGY=framework
-      - SPRING_SQL_INIT_MODE=always  # Включаем инициализацию
+      - SPRING_SQL_INIT_MODE=always
       - SPRING_SQL_INIT_PLATFORM=postgresql
     ports:
       - "8080:8080"
