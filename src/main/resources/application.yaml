@@ -1,5 +1,5 @@
 app:
-  host-url: http://localhost:8080 # 8080 если запускать локально
+  host-url: http://localhost:8080
   test-mail: ${app.test-recipient-email}
   templates-update-cache: 5s
   mail-sending-props:
@@ -79,8 +79,8 @@ spring:
           ssl:
             enable: true
     host: smtp.mail.ru
-    username: ${mail.username}   # полный адрес, например user@mail.ru
-    password: ${mail.password}   # пароль для внешних приложений из настроек Mail.ru
+    username: ${mail.username}
+    password: ${mail.password}
     port: 465
 
 
