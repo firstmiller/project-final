@@ -1,5 +1,5 @@
 app:
-  host-url: http://localhost:8080
+  host-url: http://localhost:8080 # 8080 если запускать локально
   test-mail: ${app.test-recipient-email}
   templates-update-cache: 5s
   mail-sending-props:
@@ -56,7 +56,7 @@ spring:
             client-id: ${oauth.gitlab.client-id}
             client-secret: ${oauth.gitlab.client-secret}
             client-name: GitLab
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            redirect-uri: "${app.host-url}/login/oauth2/code/{registrationId}"
             authorization-grant-type: authorization_code
             scope: read_user
         provider:
@@ -75,20 +75,22 @@ spring:
     properties:
       mail:
         smtp:
-          starttls:
-            enable: true
           auth: true
-    host: smtp.gmail.com
-    username: ${mail.username}
-    password: ${mail.password}
-    port: 587
+          ssl:
+            enable: true
+    host: smtp.mail.ru
+    username: ${mail.username}   # полный адрес, например user@mail.ru
+    password: ${mail.password}   # пароль для внешних приложений из настроек Mail.ru
+    port: 465
+
+
   thymeleaf.check-template-location: false
   mvc.throw-exception-if-no-handler-found: true
   web.resources.add-mappings: false
 
 logging:
   level:
-    root: WARN
+    root: INFO
     com.javarush.jira: INFO
     com.javarush.jira.common.config.MvcConfig: INFO
     org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: INFO

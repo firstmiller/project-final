@@ -1,0 +1,19 @@
+  server:
+    forward-headers-strategy: framework
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jira
+    username: jira
+    password: JiraRush
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+          google:
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+          gitlab:
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
