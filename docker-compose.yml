@@ -29,8 +29,6 @@ services:
       - SERVER_FORWARDHEADERSSTRATEGY=framework
       - SPRING_SQL_INIT_MODE=always
       - SPRING_SQL_INIT_PLATFORM=postgresql
-    ports:
-      - "8080:8080"
     volumes:
       - ./resources:/app/resources
     restart: unless-stopped
